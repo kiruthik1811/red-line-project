@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Donate Blood </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/android-chrome-192x192.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200"/>
+</head>
+<body>
+    <nav class="navbar container">
+        <div class="logo"> <a href="{{ url_for('index') }}"> <img src="{{ url_for('static', filename='images/one blood logo.png') }}" alt="Website logo"> </a> </div>
+        <div class="nav-item-wrapper">
+            <ul class="nav-items">
+                <li class="nav-item-1"> <a href="{{ url_for('index') }}"> Home </a> </li>
+                <li class="nav-item-2"> <a href="{{ url_for('index') }}#BLOG"> Map </a> </li>
+                <li class="nav-item-3"> <a href="{{ url_for('contact') }}"> Need Blood </a> </li>
+                <li class="nav-item-3"> <a href="{{ url_for('donate') }}"> Donate Blood </a> </li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div> <a href="{{ url_for('login') }}"> <button type="submit" class="login-btn primary-btn"> Login </button> </a> </div>
+            <div> <a href="{{ url_for('signup') }}"> <button type="submit" class="sign-up-btn secondary-btn"> Sign-up </button> </a> </div>
+        </div>
+    </nav>
+
+    <div class="form-box form-wrap-2">
+        <div class="bttn">
+            <span class="tgl-bttn text-white"> REGISTER </span>
+        </div>
+        <form action="{{ url_for('index') }}">
+            <input class="textbox" type="email" name="email" id="email" placeholder="Email" required>
+            <input class="textbox" type="text" name="username" id="username" placeholder="Username" required>
+            <input class="textbox" type="password" name="password" id="password" placeholder="Password" required>
+            <input class="stbox" type="submit" value="Register">
+            <p class="accept-tandc text-white"> <input type="radio" name="tandc" id="tandc" required> I accept all Terms and Condition</p> 
+        </form>
+    </div>
+
+    <section class="footer">
+        <div class="foot-wrap container">
+            <div class="left-items-wrap">
+                <div class="foot-links-wrap container">
+                    <div class="q-links-wrapper">
+                        <h3 class="q-links"> Quick Links </h3>
+                        <div> 
+                            <a href="https://en.wikipedia.org/wiki/Blood_donation" target="_blank"> 
+                                <div class="footer-link-wrapper"> 
+                                    <span class="material-symbols-outlined"> chevron_right </span> 
+                                    <span class="footer-link-text"> About Blood Donation </span> 
+                                </div> 
+                            </a> 
+                        </div>
+                        <div> 
+                            <a href="{{ url_for('donate') }}" target="_blank"> 
+                                <div class="footer-link-wrapper"> 
+                                    <span class="material-symbols-outlined"> chevron_right </span> 
+                                    <span class="footer-link-text"> Donate </span> 
+                                </div>
+                            </a>
+                        </div>
+                        <div> 
+                            <a href="{{ url_for('contact') }}" target="_blank"> 
+                                <div class="footer-link-wrapper"> 
+                                    <span class="material-symbols-outlined"> chevron_right </span> 
+                                    <span class="footer-link-text"> Contact Us </span> 
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm-links container">
+                    <a href="https://facebook.com"> <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook Logo"> </a>
+                    <a href="https://instagram.com"> <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram Logo"> </a>
+                    <a href="https://x.com/?lang=en"> <img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter Logo"> </a>
+                </div>
+            </div>
+            <hr class="foot-breaker">
+            <div class="right-text-wrap container">
+                <div class="foot-l-text"> "One drop can save many lives" </div>
+                <div> <button type="submit" class="login-btn primary-btn"> Donate </button> </div>
+            </div>
+        </div>
+        <p class="container cr-text"> Red line &copy; &nbsp; | &nbsp; Andy Designs &nbsp; | &nbsp; All rights reserved </p> 
+    </section>
+
+    <script>
+        function fun1(){
+            alert("Your appointment has been booked..! Please visit nearest one blood center to donate your blood");
+        }
+    </script>
+</body>
+</html>

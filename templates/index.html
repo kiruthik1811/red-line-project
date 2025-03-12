@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Line</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/android-chrome-192x192.png') }}" type="image/x-icon">
+  <style>
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 150px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .account-btn {
+      background-color: #e60000;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .account-btn:hover {
+      background-color: #00aacc;
+    }
+    .data-btn {
+      background-color: #f50a0a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .data-btn:hover {
+      background-color: #0bb9d7;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar container">
+    <div class="logo">
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='images/one blood logo.png') }}" alt="Website logo">
+      </a>
+    </div>
+    <div class="nav-item-wrapper">
+      <ul class="nav-items">
+        <li class="nav-item-1"> <a href="{{ url_for('index') }}"> Home </a> </li>
+        <li class="nav-item-2"> <a href="{{ url_for('map') }}"> Map </a> </li>
+        <li class="nav-item-3"> <a href="{{ url_for('contact') }}"> Need Blood </a> </li>
+        <li class="nav-item-3"> <a href="{{ url_for('donate') }}">Need Map Blood </a> </li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <div class="dropdown">
+        <button class="data-btn">User's Data</button>
+        <div class="dropdown-content">
+          <a href="{{ url_for('view_donations') }}">Blood Donations</a>
+          <a href="{{ url_for('view_requests') }}">Blood Requests</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="showcase-bg container">
+    <div class="bg-image">
+      <img src="{{ url_for('static', filename='images/blood-donation.png') }}" alt="Picture of a doctor, a donor and a receiver">
+    </div>
+    <div class="bd-info-wrap">
+      <h1 class="bd-info-head">Blood Donation</h1>
+      <p class="bd-info-text">
+        Blood donation is a vital act of giving that can save lives. A blood donation occurs when a person voluntarily has blood drawn for transfusions or to be made into biopharmaceutical medications.
+      </p>
+      <a href="{{ url_for('link') }}" target="_blank" class="know-more-btn">
+        <button class="primary-btn">Know More</button>
+      </a>
+    </div>
+  </section>
+  
+  <section class="footer">
+    <div class="foot-wrap container">
+      <div class="sm-links container">
+        <a href="https://facebook.com"> <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook"> </a>
+        <a href="https://instagram.com"> <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram"> </a>
+        <a href="https://x.com/?lang=en"> <img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter Logo"> </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

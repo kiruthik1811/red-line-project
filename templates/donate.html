@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Blood</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/android-chrome-192x192.png') }}" type="image/x-icon">
+  <script src="{{ url_for('static', filename='js/dvalid.js') }}"></script>
+</head>
+<body>
+  <nav class="navbar container">
+    <div class="logo">
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='images/one blood logo.png') }}" alt="Website logo">
+      </a>
+    </div>
+    <div class="nav-item-wrapper">
+      <ul class="nav-items">
+        <li class="nav-item-1"> <a href="{{ url_for('index') }}">Home</a> </li>
+        <li class="nav-item-2"> <a href="{{ url_for('map') }}">Map</a> </li>
+        <li class="nav-item-3"> <a href="{{ url_for('contact') }}">Need Blood</a> </li>
+        <li class="nav-item-3"> <a href="{{ url_for('donate') }}">Need Map Blood</a> </li>
+      </ul>
+    </div>
+   
+  </nav>
+
+  <section class="contact d-contact container">
+    <h1 class="contact-heading">MAP</h1>
+    <div class="c-wrap d-wrap">
+      <form action="{{ url_for('donate') }}" method="POST" class="contact-form">
+        <p class="c-text">Please fill each and every information correctly:</p>
+        
+        <p class="c-text">Full Name:</p>
+        <input type="text" name="fname" required class="c-input">
+        
+        <p class="c-text">Gender:</p>
+        <input type="radio" name="gender" id="male" value="Male">
+        <label for="male" class="c-text">Male</label>
+        <input type="radio" name="gender" id="female" value="Female">
+        <label for="female" class="c-text">Female</label>
+        <input type="radio" name="gender" id="others" value="Others">
+        <label for="others" class="c-text">Others</label>
+        
+        <p class="c-text">Enter your age:</p>
+        <input type="text" name="fage" required class="c-input">
+        
+        <p class="c-text">Enter your current weight:</p>
+        <input type="text" name="fweight" required class="c-input">
+        
+        <p class="c-text">E-mail:</p>
+        <input type="email" name="femail" required class="c-input">
+        
+        <p class="c-text">Phone no:</p>
+        <input type="text" name="fphone" required class="c-input">
+        
+        <p class="c-text">Blood Type:</p>
+        <input type="text" name="ftype" required class="c-input">
+        
+        <p class="c-text">Please specify any disease you are suffering from or have previously suffered:</p>
+        <textarea name="fdetails" cols="50" rows="10" required></textarea>
+        
+        <button type="submit" class="dBtn" onclick="dValidate()">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="foot-wrap container">
+      <div class="sm-links container">
+        <a href="https://facebook.com" target="_blank">
+          <img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook Logo">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram Logo">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter Logo">
+        </a>
+      </div>
+    </div>
+    <p class="container cr-text">Red Line &copy; | Andy Designs | All rights reserved</p>
+  </section>
+</body>
+</html>
