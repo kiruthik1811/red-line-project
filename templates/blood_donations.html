@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donations</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
 
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Blood Donation Database</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Blood Type</th>
+      <th>Age</th>
+      <th>Weight</th>
+      <th>Medical Conditions</th>
+    </tr>
+    {% for donation in donations %}
+    <tr>
+      <td>{{ donation.name }}</td>
+      <td>{{ donation.gender }}</td>
+      <td>{{ donation.email }}</td>
+      <td>{{ donation.phone }}</td>
+      <td>{{ donation.blood_type }}</td>
+      <td>{{ donation.age }}</td>
+      <td>{{ donation.weight }}</td>
+      <td>{{ donation.medical_conditions }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
